@@ -5,19 +5,12 @@ import Image from 'next/image'
 import { CgMenuGridO} from 'react-icons/cg'
 import { IoMdSearch } from 'react-icons/io'
 import { FaCoins } from 'react-icons/fa'
-
-
-import {
-    ModalProvider,
-    Modal,
-    useModal,
-    ModalTransition,
-} from 'react-simple-hook-modal'
+import { Modal, useModal, ModalTransition} from 'react-simple-hook-modal'
 import 'react-simple-hook-modal/dist/styles.css'
-import { fromJSON } from 'postcss'
 import BuyModal from './BuyModal'
 
-const balance = "99";
+
+
 function Header() {
 
     const styles = {
@@ -31,7 +24,9 @@ function Header() {
     }
     const { balance, buyTokens, getBalance } = useContext(AmazonContext)
     const {openModal, isModalOpen, closeModal} = useModal()
-    let count =0;
+   
+    
+    
   return (
     <div className={styles.container}>
         <div className={styles.logo}>
@@ -61,7 +56,7 @@ function Header() {
                 <BuyModal close={closeModal} buyTokens={buyTokens} />
               </Modal>
             </div>
-        ) : (
+        ): (
             <div className={(styles.balance, styles.menuItem)} onClick={openModal}>0 AC <FaCoins className={styles.coins} />
                 <Modal isOpen = {isModalOpen} transition = {ModalTransition.SCALE}>
                    <BuyModal close = {closeModal} />

@@ -29,7 +29,6 @@ const BuyModal = ({ close, buyTokens }) => {
     etherscanLink,
     setEtherscanLink,
   } = useContext(AmazonContext)
-  
   useEffect(() => {
     calculatePrice()
   }, [tokenAmount])
@@ -39,8 +38,6 @@ const BuyModal = ({ close, buyTokens }) => {
     price = price.toFixed(4)
     setAmountDue(price)
   }
-
-  
 
   return (
     <div className={styles.container}>

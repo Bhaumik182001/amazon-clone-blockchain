@@ -175,7 +175,7 @@ export const AmazonProvider = ({children}) => {
         }) ()
     }, [isAuthenticated, user, username, currentAccount, getBalance, listenToUpdates])
 
-    let count =0;
+    
     const getOwnedAssets = async () => {
         try{
             if(userData[0]){

@@ -5,7 +5,7 @@ import moment from 'moment'
 import { AmazonContext } from '../context/AmazonContext'
 const Transaction = ({ item }) => {
   const styles = {
-    container: ` w-[40%] flex flex-col border-[#d6d7d9] border-2 rounded-lg shadow-lg`,
+    container: ` w-[55%] flex flex-col border-[#d6d7d9] border-2 rounded-lg shadow-lg`,
     top: `flex w-full h-[80px] bg-[#f0f1f3] p-[20px] pr-[80px] gap-[80px]`,
     topHeaderText: `text lg text-left flex items-center`,
     topHeaderEndText: `text lg flex items-center  flex-row p-[30px]`,
