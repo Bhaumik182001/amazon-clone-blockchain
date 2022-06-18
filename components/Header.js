@@ -31,7 +31,7 @@ function Header() {
     }
     const { balance, buyTokens, getBalance } = useContext(AmazonContext)
     const {openModal, isModalOpen, closeModal} = useModal()
-
+    let count =0;
   return (
     <div className={styles.container}>
         <div className={styles.logo}>
@@ -56,12 +56,12 @@ function Header() {
         {balance ? (
             <div className={(styles.balance, styles.menuItem)} onClick={openModal}>
                 {balance}
-                <FaCoins className={styles.coins} />
+                <FaCoins />
               <Modal isOpen={isModalOpen} transition={ModalTransition.SCALE}>
                 <BuyModal close={closeModal} buyTokens={buyTokens} />
               </Modal>
             </div>
-        ): (
+        ) : (
             <div className={(styles.balance, styles.menuItem)} onClick={openModal}>0 AC <FaCoins className={styles.coins} />
                 <Modal isOpen = {isModalOpen} transition = {ModalTransition.SCALE}>
                    <BuyModal close = {closeModal} />

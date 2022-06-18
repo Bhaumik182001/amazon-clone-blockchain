@@ -14,9 +14,6 @@ const history = () => {
     transactions: `flex gap-[50px] flex-row flex-wrap`,
   }
   const { ownedItems } = useContext(AmazonContext)
-//   useEffect(() => {
-//     console.log(ownedItems)
-//   }, [])
 
   return (
     <div className={styles.container}>

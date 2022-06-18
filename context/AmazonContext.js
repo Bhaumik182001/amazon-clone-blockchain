@@ -156,11 +156,11 @@ export const AmazonProvider = ({children}) => {
     useEffect(() => {
         ;(async() =>{
             if(isWeb3Enabled){
-                await getOwnedAssets()
                 await getAssets()
+                await getOwnedAssets()
             }
         })()
-    },[getAssets,isWeb3Enabled])
+    },[userData,assetsData, assetsDataisLoading, userDataisLoading])
 
     useEffect(()=> {
         ;(async() => {
@@ -173,14 +173,17 @@ export const AmazonProvider = ({children}) => {
              setCurrentAccount(account)
          }
         }) ()
-     }, [isAuthenticated, user, username, currentAccount, getBalance, listenToUpdates])
+    }, [isAuthenticated, user, username, currentAccount, getBalance, listenToUpdates])
 
+    let count =0;
     const getOwnedAssets = async () => {
         try{
             if(userData[0]){
                 setOwnedItems(prevItems => [
                     ...prevItems, userData[0].attributes.ownnedAssets
                 ])
+                count++;
+                console.log(count)
             }
         }catch(error){
             console.log(error)
