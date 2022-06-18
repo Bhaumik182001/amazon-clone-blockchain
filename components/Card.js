@@ -1,6 +1,7 @@
 import React, { useContext} from 'react'
 import Image from 'next/image'
 import { FaCoins } from 'react-icons/fa'
+import { AmazonContext } from '../context/AmazonContext'
 
 
 function Card({ item }) {
@@ -11,10 +12,14 @@ function Card({ item }) {
         cardTitle: `text-xl font-bold flex text-center w-full flex-1 justify-center mt-[10px]`,
         price: `text-md font-bold flex justify-center`,
         coins: `ml-[10px]`,
-      }
+    }
+
+     const {buyAsset} = useContext(AmazonContext) 
 
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.cardContainer}
+    onClick={()=> buyAsset(item.price, item)}
+    >
         <div className={styles.card}>
             <Image src={item.src} className='object-cover object-center' 
             width={190}
