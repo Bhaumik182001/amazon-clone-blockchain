@@ -12,6 +12,7 @@ import BuyModal from './BuyModal'
 
 
 function Header() {
+  
 
     const styles = {
         container: `h-[60px] w-full flex items-center gap-5 px-16`,
@@ -57,7 +58,9 @@ function Header() {
               </Modal>
             </div>
         ): (
-            <div className={(styles.balance, styles.menuItem)} onClick={openModal}>0 AC <FaCoins className={styles.coins} />
+            <div className={(styles.balance, styles.menuItem)} onClick={openModal}>
+              0 AC 
+              <FaCoins className={styles.coins} />
                 <Modal isOpen = {isModalOpen} transition = {ModalTransition.SCALE}>
                    <BuyModal close = {closeModal} />
                 </Modal>

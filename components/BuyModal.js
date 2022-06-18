@@ -29,6 +29,7 @@ const BuyModal = ({ close, buyTokens }) => {
     etherscanLink,
     setEtherscanLink,
   } = useContext(AmazonContext)
+  
   useEffect(() => {
     calculatePrice()
   }, [tokenAmount])

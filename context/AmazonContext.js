@@ -113,6 +113,7 @@ export const AmazonProvider = ({children}) => {
 
     const buyTokens = async () => {
         if(!isAuthenticated) {
+            
             await connectWallet()
         }
 
@@ -182,8 +183,7 @@ export const AmazonProvider = ({children}) => {
                 setOwnedItems(prevItems => [
                     ...prevItems, userData[0].attributes.ownnedAssets
                 ])
-                count++;
-                console.log(count)
+                
             }
         }catch(error){
             console.log(error)
