@@ -13,6 +13,7 @@ const nextConfig = {
       'media2.giphy.com',
       'media4.giphy.com',
     ],
+    unoptimized: true,
   },
 }
 
